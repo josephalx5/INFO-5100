@@ -4,16 +4,21 @@
  */
 package ui.ShellEnergy;
 
+import java.awt.CardLayout;
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class EnergyAdmin extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form EnergyAdmin
      */
-    public EnergyAdmin() {
+    public EnergyAdmin(JSplitPane jSplitPane) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 
@@ -127,7 +132,10 @@ public class EnergyAdmin extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        // TODO add your handling code here:
+          EnergyManageFuelStations manage = new EnergyManageFuelStations(jSplitPane);
+        jSplitPane.add("EnergyAdmin", manage);
+        CardLayout layout = (CardLayout) manage.getLayout();
+        layout.next(manage);
     }//GEN-LAST:event_LoginActionPerformed
 
     private void Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login1ActionPerformed

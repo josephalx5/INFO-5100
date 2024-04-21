@@ -4,16 +4,21 @@
  */
 package ui.ShellEnergy;
 
+import java.awt.CardLayout;
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class EnergyLoginpage extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form EnergyLoginpage
      */
-    public EnergyLoginpage() {
+    public EnergyLoginpage(JSplitPane jSplitPane) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 
@@ -58,6 +63,11 @@ public class EnergyLoginpage extends javax.swing.JPanel {
         });
 
         jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Home");
 
@@ -128,6 +138,13 @@ public class EnergyLoginpage extends javax.swing.JPanel {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        EnergyAdmin admin = new EnergyAdmin(jSplitPane);
+        jSplitPane.add("EnergyAdmin", admin);
+        CardLayout layout = (CardLayout) admin.getLayout();
+        layout.next(admin);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
