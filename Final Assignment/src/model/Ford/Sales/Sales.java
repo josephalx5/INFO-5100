@@ -1,10 +1,12 @@
 package model.Ford.Sales;
 
+import model.Configuration;
+
 import java.util.ArrayList;
 
 public class Sales {
-    ArrayList<Order> pastOrders;
-    ArrayList<Order> currentOrders;
+    ArrayList<TruckOrder> pastOrders;
+    ArrayList<TruckOrder> currentOrders;
     private int inventory;
 
     public Sales() {
@@ -21,31 +23,31 @@ public class Sales {
         this.inventory = inventory;
     }
 
-    public ArrayList<Order> getPastOrders() {
+    public ArrayList<TruckOrder> getPastOrders() {
         return pastOrders;
     }
 
-    public ArrayList<Order> getCurrentOrders() {
+    public ArrayList<TruckOrder> getCurrentOrders() {
         return currentOrders;
     }
 
     public void addToPastOrders(String orderId) {
-        //TODO: Add trucks to FedEx
-        for (Order order : currentOrders) {
+        for (TruckOrder order : currentOrders) {
             if (order.getSalesId().equals(orderId)) {
                 pastOrders.add(order);
                 currentOrders.remove(order);
+                Configuration.addTruckToShippingNetwork(order);
                 break;
             }
         }
     }
 
-    public void addToCurrentOrders(Order order) {
+    public void addToCurrentOrders(TruckOrder order) {
         currentOrders.add(order);
     }
 
     public void removeFromCurrentOrders(String orderId) {
-        for (Order order : currentOrders) {
+        for (TruckOrder order : currentOrders) {
             if (order.getSalesId().equals(orderId)) {
                 currentOrders.remove(order);
                 break;

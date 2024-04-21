@@ -1,10 +1,10 @@
 package model.Ford.Sales;
 
-public class Order {
+public class TruckOrder {
     private final String salesId;
-    private int valueOfVehicle;
+    private double valueOfVehicle;
 
-    public Order(int valueOfVehicle) {
+    public TruckOrder(double valueOfVehicle) {
         this.salesId = java.util.UUID.randomUUID().toString();
         this.valueOfVehicle = valueOfVehicle;
     }
@@ -13,11 +13,11 @@ public class Order {
         return salesId;
     }
 
-    public int getValueOfVehicle() {
+    public double getValueOfVehicle() {
         return valueOfVehicle;
     }
 
-    public void setValueOfVehicle(int valueOfVehicle) {
+    public void setValueOfVehicle(double valueOfVehicle) {
         this.valueOfVehicle = valueOfVehicle;
     }
 }
