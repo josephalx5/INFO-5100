@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05a7422a-465e-4a88-9575-08ba0e5af8d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightAdmin.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightAdmin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightLoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightLoginPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightManageFleet.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightManageFleet.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightManageOrders.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/build/classes/ui/FreightCompany/FreightManageOrders.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/build/classes/ui/MainJFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/build/classes/ui/MainJFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/build/classes/ui/ShellEnergy/EnergyLoginpage.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/build/classes/ui/ShellEnergy/EnergyLoginpage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/nbproject/private/private.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/nbproject/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/nbproject/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/src/ui/FreightCompany/FreightAdmin.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/src/ui/FreightCompany/FreightAdmin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/src/ui/FreightCompany/FreightAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/src/ui/FreightCompany/FreightAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/src/ui/MainJFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/src/ui/MainJFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final Assignment/src/ui/MainJFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Final Assignment/src/ui/MainJFrame.java" afterDir="false" />
-    </list>
+    <list default="true" id="05a7422a-465e-4a88-9575-08ba0e5af8d2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +10,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2fPrK0pBbgR6iUo3KfpC9UkSbpi" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,7 +22,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/gudur/OneDrive/Documents/GitHub/INFO5100-FinalProject",
+    "last_opened_file_path": "C:/Users/gudur/Downloads/java-sample-jxmapviewer-main",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -57,6 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713713485710</updated>
       <workItem from="1713713486799" duration="35000" />
+      <workItem from="1713729750095" duration="26000" />
     </task>
     <servers />
   </component>
