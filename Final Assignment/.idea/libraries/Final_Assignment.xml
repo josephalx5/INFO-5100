@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Final Assignment">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jfreechart-1.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TimingFramework-0.55.jar!/" />
+      <root url="jar://$PROJECT_DIR$/xchart-demo-3.8.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jcommon-1.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/xchart-3.8.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
