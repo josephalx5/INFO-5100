@@ -4,16 +4,21 @@
  */
 package ui.FreightCompany;
 
+import java.awt.CardLayout;
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class FreightAdmin extends javax.swing.JPanel {
-
+JSplitPane jSplitPane;
     /**
      * Creates new form FreightAdmin
      */
-    public FreightAdmin() {
+    public FreightAdmin(JSplitPane jSplitPane) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 
@@ -34,10 +39,20 @@ public class FreightAdmin extends javax.swing.JPanel {
         jLabel3.setText("Unassigned Order:");
 
         jButton1.setText("Manage Order");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Emissions Target Met:");
 
         jButton2.setText("Manage Fleet");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -77,6 +92,20 @@ public class FreightAdmin extends javax.swing.JPanel {
                 .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         FreightManageOrders orders = new FreightManageOrders(jSplitPane);
+        jSplitPane.add("FreightManageOrders", orders);
+        CardLayout layout = (CardLayout) orders.getLayout();
+        layout.next(orders);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            FreightManageFleet fleet = new FreightManageFleet(jSplitPane);
+            jSplitPane.add("EnergyAdmin", fleet);
+            CardLayout layout = (CardLayout) fleet.getLayout();
+            layout.next(fleet);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

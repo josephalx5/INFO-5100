@@ -16,7 +16,7 @@ import org.jfree.data.general.DefaultPieDataset;
  * @author sahithi
  */
 public class EnergyAdmin extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form EnergyAdmin
      */

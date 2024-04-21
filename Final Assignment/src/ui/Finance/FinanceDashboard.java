@@ -4,16 +4,20 @@
  */
 package ui.Finance;
 
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class FinanceDashboard extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form FinanceDashboard
      */
-    public FinanceDashboard() {
+    public FinanceDashboard(JSplitPane jSplitPane) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 
