@@ -8,9 +8,9 @@ public class ShellEnergy extends Organization {
     private final ArrayList<RefuelingStation> refuelingStations;
 
 
-    public ShellEnergy(String name, ArrayList<RefuelingStation> refuelingStations) {
+    public ShellEnergy(String name) {
         super(name);
-        this.refuelingStations = refuelingStations;
+        this.refuelingStations = new ArrayList<>();
     }
 
     public String getName() {

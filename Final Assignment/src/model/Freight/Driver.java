@@ -9,6 +9,7 @@ public class Driver {
     private int driverSafetyRating;
     private int hoursWorked;
     private final ArrayList<Order> previousRoutes;
+    private Order currentOrder;
     private boolean isDriverAvailable;
 
     public Driver(String driverName, int driverSafetyRating) {
@@ -54,6 +55,14 @@ public class Driver {
 
     public void addPreviousRoute(Order order) {
         previousRoutes.add(order);
+    }
+
+    public Order getCurrentOrder() {
+        return currentOrder;
+    }
+
+    public void setCurrentOrder(Order currentOrder) {
+        this.currentOrder = currentOrder;
     }
 
     public void setDriverAvailable(boolean driverAvailable) {

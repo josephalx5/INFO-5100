@@ -1,5 +1,6 @@
 package model.Freight;
 
+import model.Configuration;
 import model.Organization;
 
 import java.util.ArrayList;
@@ -8,21 +9,22 @@ public class FedEx extends Organization {
     private final ArrayList<Truck> trucks;
     private final ArrayList<Driver> drivers;
     private final ArrayList<Order> orders;
+    private final ArrayList<Order> pastOrders;
 
     public FedEx(String name) {
         super(name);
         this.trucks = new ArrayList<>();
         this.drivers = new ArrayList<>();
         this.orders = new ArrayList<>();
+        this.pastOrders = new ArrayList<>();
     }
 
     public String getName() {
         return super.getName();
     }
 
-    public Truck addTruck(Truck truck) {
+    public void addTruck(Truck truck) {
         trucks.add(truck);
-        return truck;
     }
 
     public void addDriver(Driver driver) {
@@ -58,5 +60,33 @@ public class FedEx extends Organization {
                 break;
             }
         }
+    }
+
+    public void markOrderComplete(String orderId) {
+        for (Order order : orders) {
+            if (order.getOrderId().equals(orderId)) {
+                pastOrders.add(order);
+                orders.remove(order);
+                break;
+            }
+        }
+    }
+    public void addTruck(){
+        Configuration.addLeaseRequestToBank();
+    }
+    public ArrayList<Order> getPastOrders() {
+        return pastOrders;
+    }
+
+    public ArrayList<Truck> getTrucks() {
+        return trucks;
+    }
+
+    public ArrayList<Driver> getDrivers() {
+        return drivers;
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 }

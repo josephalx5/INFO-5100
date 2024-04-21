@@ -1,5 +1,6 @@
 package model.Ford.Services;
 
+import model.Configuration;
 import model.Freight.Truck;
 
 import java.util.ArrayList;
@@ -13,6 +14,13 @@ public class Service {
         serviceRequests = new ArrayList<>();
         completedServiceRequests = new ArrayList<>();
         prospectiveTrucks = new ArrayList<>();
+        populateCompletedServiceRequests();
+    }
+
+    private void populateCompletedServiceRequests() {
+        for(int i = 0; i < 5; i++) {
+            completedServiceRequests.add(new ServiceRequest(1000+i));
+        }
     }
 
     public ArrayList<ServiceRequest> getServiceRequests() {
@@ -47,7 +55,13 @@ public class Service {
     }
 
     public ArrayList<Truck> getProspectiveTrucks() {
-        //TODO: Add logic to get prospective trucks
+        System.out.println("Getting prospective trucks");
+        Configuration.getShippingNetwork().getTrucks().forEach(truck -> {
+            int mileage = truck.getMileage();
+            if (mileage%20000!=0) {
+                prospectiveTrucks.add(truck);
+            }
+        });
         return prospectiveTrucks;
     }
 }

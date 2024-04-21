@@ -1,5 +1,7 @@
 package model.Freight;
 
+import model.Bank.Insurance.Insurance;
+
 import java.util.UUID;
 
 public class Truck {
@@ -9,7 +11,8 @@ public class Truck {
     private int mileage;
     private String truckModel;
     private Driver driver;
-    private boolean isTruckAvailable;
+    private Order currentOrder;
+    private Insurance insurance;
 
     public Truck(int truckCapacity, FuelType fuelType, int mileage, String truckModel) {
         this.truckId = UUID.randomUUID().toString();
@@ -17,7 +20,6 @@ public class Truck {
         this.fuelType = fuelType;
         this.mileage = mileage;
         this.truckModel = truckModel;
-        this.isTruckAvailable = true;
     }
 
     public String getTruckId() {
@@ -62,14 +64,23 @@ public class Truck {
 
     public void setDriver(Driver driver) {
         driver.setDriverAvailable(false);
+        driver.setCurrentOrder(currentOrder);
         this.driver = driver;
     }
 
-    public boolean isTruckAvailable() {
-        return isTruckAvailable;
+    public Insurance getInsurance() {
+        return insurance;
     }
 
-    public void setTruckAvailable(boolean truckAvailable) {
-        isTruckAvailable = truckAvailable;
+    public void setInsurance(Insurance insurance) {
+        this.insurance = insurance;
+    }
+
+    public Order getCurrentOrder() {
+        return currentOrder;
+    }
+
+    public void setCurrentOrder(Order currentOrder) {
+        this.currentOrder = currentOrder;
     }
 }
