@@ -16,7 +16,7 @@ import org.jfree.data.general.DefaultPieDataset;
  * @author sahithi
  */
 public class EnergyAdmin extends javax.swing.JPanel {
-    JSplitPane jSplitPane;
+//    JSplitPane jSplitPane;
     /**
      * Creates new form EnergyAdmin
      */
@@ -212,15 +212,15 @@ public class EnergyAdmin extends javax.swing.JPanel {
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel11)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel10))))
                         .addGap(76, 76, 76)))
