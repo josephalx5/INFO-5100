@@ -71,7 +71,7 @@ JSplitPane jSplitPane;
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(191, 191, 191)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 265, Short.MAX_VALUE)))
+                        .addGap(0, 465, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -87,7 +87,7 @@ JSplitPane jSplitPane;
                 .addComponent(jLabel3)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 386, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 388, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(32, 32, 32))
         );
