@@ -11,7 +11,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -22,29 +21,4 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
-/Final Assignment/nbproject/private/
-/Final Assignment/build/
-Final Assignment/nbproject/project.xml
-Final Assignment/build.xml
-Final Assignment/manifest.mf
-Final Assignment/nbproject/build-impl.xml
-Final Assignment/nbproject/genfiles.properties
-Final Assignment/nbproject/project.properties
-Final Assignment/src/.DS_Store
-Final Assignment/src/ui/.DS_Store
-Final Assignment/src/ui/FreightCompany/FreightAdmin.form
-Final Assignment/src/ui/FreightCompany/FreightAdmin.java
-Final Assignment/src/ui/FreightCompany/FreightLoginPage.form
-Final Assignment/src/ui/FreightCompany/FreightLoginPage.java
-Final Assignment/src/ui/FreightCompany/FreightManageFleet.form
-Final Assignment/src/ui/FreightCompany/FreightManageFleet.java
-Final Assignment/src/ui/FreightCompany/FreightManageOrders.form
-Final Assignment/src/ui/MainJFrame.form
-Final Assignment/src/ui/FreightCompany/FreightManageOrders.java
-Final Assignment/src/ui/MainJFrame.java
-Final Assignment/src/ui/ShellEnergy/EnergyAdmin.form
-Final Assignment/src/ui/ShellEnergy/EnergyAdmin.java
-Final Assignment/src/ui/ShellEnergy/EnergyLoginpage.form
-Final Assignment/src/ui/ShellEnergy/EnergyLoginpage.java
-Final Assignment/src/ui/ShellEnergy/EnergyManageFuelStations.form
-Final Assignment/src/ui/ShellEnergy/EnergyManageFuelStations.java
+*.DS_Store

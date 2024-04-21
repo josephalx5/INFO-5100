@@ -4,16 +4,20 @@
  */
 package ui.FreightCompany;
 
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class FreightManageFleet extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form FreightManageFleet
      */
-    public FreightManageFleet() {
+    public FreightManageFleet(JSplitPane jSplitPane ) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 

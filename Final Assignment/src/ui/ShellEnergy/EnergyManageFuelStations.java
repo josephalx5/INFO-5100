@@ -4,16 +4,20 @@
  */
 package ui.ShellEnergy;
 
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class EnergyManageFuelStations extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form EnergyManageFuelStations
      */
-    public EnergyManageFuelStations() {
+    public EnergyManageFuelStations(JSplitPane jSplitPane) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 
