@@ -4,16 +4,21 @@
  */
 package ui.Manufacturing;
 
+import java.awt.CardLayout;
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class ManufacturingLogin extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form ManufacturingLogin
      */
-    public ManufacturingLogin() {
+    public ManufacturingLogin(JSplitPane jSplitPane) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 
@@ -52,6 +57,11 @@ public class ManufacturingLogin extends javax.swing.JPanel {
         });
 
         jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Telugu MN", 1, 36)); // NOI18N
         jLabel1.setText("Manufacturing ");
@@ -135,6 +145,13 @@ public class ManufacturingLogin extends javax.swing.JPanel {
     private void Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Login1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+          ManufacturingDashboard dashboard = new ManufacturingDashboard(jSplitPane);
+        jSplitPane.add("Manufacturing", dashboard);
+        CardLayout layout = (CardLayout) dashboard.getLayout();
+        layout.next(dashboard);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

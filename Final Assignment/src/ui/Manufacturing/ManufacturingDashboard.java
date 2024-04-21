@@ -4,16 +4,20 @@
  */
 package ui.Manufacturing;
 
+import javax.swing.JSplitPane;
+
 /**
  *
  * @author sahithi
  */
 public class ManufacturingDashboard extends javax.swing.JPanel {
-
+    JSplitPane jSplitPane;
     /**
      * Creates new form ManufacturingDashboard
      */
-    public ManufacturingDashboard() {
+    public ManufacturingDashboard(JSplitPane jSplitPane) {
+        
+        this.jSplitPane = jSplitPane;
         initComponents();
     }
 
