@@ -1,5 +1,7 @@
 package model.Bank.Leasing;
 
+import model.Configuration;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -56,6 +58,7 @@ public class Purchase {
             if (lease.getLeaseId().equals(leaseId)) {
                 leases.add(lease);
                 newLeaseRequests.remove(lease);
+                Configuration.addPurchaseRequestToManufacturer(lease);
                 break;
             }
         }

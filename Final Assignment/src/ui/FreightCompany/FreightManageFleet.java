@@ -11,13 +11,13 @@ import javax.swing.JSplitPane;
  * @author sahithi
  */
 public class FreightManageFleet extends javax.swing.JPanel {
-    JSplitPane jSplitPane;
+    
     /**
      * Creates new form FreightManageFleet
      */
-    public FreightManageFleet(JSplitPane jSplitPane ) {
+    public FreightManageFleet( ) {
         
-        this.jSplitPane = jSplitPane;
+        
         initComponents();
     }
 

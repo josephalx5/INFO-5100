@@ -77,6 +77,6 @@ public class Order {
 
     public void setTruck(Truck truck) {
         this.truck = truck;
-        truck.setTruckAvailable(false);
+        this.truck.setCurrentOrder(this);
     }
 }

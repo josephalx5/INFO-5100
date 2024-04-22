@@ -1,17 +1,23 @@
 package model.Freight;
 
+import model.Role.Person;
+import model.Role.RoleManager;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Driver {
+public class Driver extends Person {
     private final String driverId;
     private String driverName;
     private int driverSafetyRating;
     private int hoursWorked;
     private final ArrayList<Order> previousRoutes;
+    private Order currentOrder;
     private boolean isDriverAvailable;
 
     public Driver(String driverName, int driverSafetyRating) {
+        super(RoleManager.DRIVER);
+        super.setUsername(driverName);
         this.driverId = UUID.randomUUID().toString();
         this.driverName = driverName;
         this.driverSafetyRating = driverSafetyRating;
@@ -54,6 +60,14 @@ public class Driver {
 
     public void addPreviousRoute(Order order) {
         previousRoutes.add(order);
+    }
+
+    public Order getCurrentOrder() {
+        return currentOrder;
+    }
+
+    public void setCurrentOrder(Order currentOrder) {
+        this.currentOrder = currentOrder;
     }
 
     public void setDriverAvailable(boolean driverAvailable) {
