@@ -2,7 +2,7 @@ package model.Ford.Sales;
 
 public class TruckOrder {
     private final String salesId;
-    private int valueOfVehicle;
+    private double valueOfVehicle;
     private String model;
 
     public TruckOrder(double valueOfVehicle) {
@@ -23,7 +23,7 @@ public class TruckOrder {
         return salesId;
     }
 
-    public int getValueOfVehicle() {
+    public double getValueOfVehicle() {
         return valueOfVehicle;       
     }
 

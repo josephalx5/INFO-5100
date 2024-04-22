@@ -43,16 +43,16 @@ public class Configuration {
     private static void initPersonDirectory() {
         Person person1 = new Person(RoleManager.FLEET_MANAGER);
         person1.setUsername("Fleet Manager");
-        Person person2 = new Person(RoleManager.INSURANCE_MANAGER);
-        person2.setUsername("Insurance Manager");
+        Person person2 = new Person(RoleManager.RISK_ANALYST);
+        person2.setUsername("Risk Analyst");
         Person person3 = new Person(RoleManager.SALES_MANAGER);
         person3.setUsername("Sales Manager");
         Person person4 = new Person(RoleManager.SERVICE_MANAGER);
         person4.setUsername("Service Manager");
         Person person5 = new Person(RoleManager.PURCHASE_MANAGER);
         person5.setUsername("Purchase Manager");
-        Person person6 = new Person(RoleManager.ENERGY_ADMIN);
-        person6.setUsername("Energy Admin");
+        Person person6 = new Person(RoleManager.BUSINESS_OPS_MANAGER);
+        person6.setUsername("Operations Manager");
         personDirectory.addPerson(person1);
         personDirectory.addPerson(person2);
         personDirectory.addPerson(person3);
