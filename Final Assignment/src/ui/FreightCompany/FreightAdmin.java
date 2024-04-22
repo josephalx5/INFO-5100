@@ -4,8 +4,7 @@
  */
 package ui.FreightCompany;
 
-import java.awt.CardLayout;
-import javax.swing.JSplitPane;
+
 
 /**
  *
@@ -94,7 +93,7 @@ public class FreightAdmin extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
+//    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
