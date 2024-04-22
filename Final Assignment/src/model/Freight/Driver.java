@@ -1,9 +1,12 @@
 package model.Freight;
 
+import model.Role.Person;
+import model.Role.RoleManager;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Driver {
+public class Driver extends Person {
     private final String driverId;
     private String driverName;
     private int driverSafetyRating;
@@ -13,6 +16,8 @@ public class Driver {
     private boolean isDriverAvailable;
 
     public Driver(String driverName, int driverSafetyRating) {
+        super(RoleManager.DRIVER);
+        super.setUsername(driverName);
         this.driverId = UUID.randomUUID().toString();
         this.driverName = driverName;
         this.driverSafetyRating = driverSafetyRating;

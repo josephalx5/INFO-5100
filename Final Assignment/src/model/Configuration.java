@@ -11,6 +11,9 @@ import model.Ford.Ford;
 import model.Ford.Sales.TruckOrder;
 import model.Ford.Services.ServiceRequest;
 import model.Freight.*;
+import model.Role.Person;
+import model.Role.PersonDirectory;
+import model.Role.RoleManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +23,7 @@ public class Configuration {
     private static FedEx shippingNetwork;
     private static Ford manufacturer;
     private static Purchase purchase;
+    private static PersonDirectory personDirectory;
     private static InsurancePredictor insurancePredictor;
 
     private static void init() {
@@ -27,6 +31,8 @@ public class Configuration {
         shippingNetwork = new FedEx("FedEx");
         manufacturer = new Ford();
         purchase = new Purchase();
+        personDirectory = new PersonDirectory();
+        initPersonDirectory();
         initFuelingNetwork();
         initShippingNetwork();
         initManufacturer();
@@ -34,6 +40,26 @@ public class Configuration {
 //        initInsurancePredictor();
     }
 
+    private static void initPersonDirectory() {
+        Person person1 = new Person(RoleManager.FLEET_MANAGER);
+        person1.setUsername("Fleet Manager");
+        Person person2 = new Person(RoleManager.INSURANCE_MANAGER);
+        person2.setUsername("Insurance Manager");
+        Person person3 = new Person(RoleManager.SALES_MANAGER);
+        person3.setUsername("Sales Manager");
+        Person person4 = new Person(RoleManager.SERVICE_MANAGER);
+        person4.setUsername("Service Manager");
+        Person person5 = new Person(RoleManager.PURCHASE_MANAGER);
+        person5.setUsername("Purchase Manager");
+        Person person6 = new Person(RoleManager.ENERGY_ADMIN);
+        person6.setUsername("Energy Admin");
+        personDirectory.addPerson(person1);
+        personDirectory.addPerson(person2);
+        personDirectory.addPerson(person3);
+        personDirectory.addPerson(person4);
+        personDirectory.addPerson(person5);
+        personDirectory.addPerson(person6);
+    }
     public static ShellEnergy getRefuelingNetwork() {
         if (refuelingNetwork == null) {
             init();
@@ -200,7 +226,7 @@ public class Configuration {
                 3));
         shippingNetwork.addOrder(new Order("09/04/2024", "15/04/2024", 60000, new Route("Baltimore", "Boston", 600, 10),
                 7));
-        // Adding drivers to the shipping network
+        // Adding drivers to the shipping
         shippingNetwork.addDriver(new Driver("John Doe", 8));
         shippingNetwork.addDriver(new Driver("Jones Doe", 9));
         shippingNetwork.addDriver(new Driver("Jeremy Clarkson", 10));
@@ -244,6 +270,12 @@ public class Configuration {
 
     public static void addPurchaseRequestToManufacturer(Lease lease) {
         manufacturer.getSales().addToCurrentOrders(new TruckOrder(lease.getLeaseAmount()));
+    }
+    public static PersonDirectory getPersonDirectory() {
+        if (personDirectory == null) {
+            init();
+        }
+        return personDirectory;
     }
 
 }

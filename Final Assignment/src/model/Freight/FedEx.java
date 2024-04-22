@@ -29,6 +29,7 @@ public class FedEx extends Organization {
 
     public void addDriver(Driver driver) {
         drivers.add(driver);
+        Configuration.getPersonDirectory().addPerson(driver);
     }
 
     public void removeDriver(String driverId) {
