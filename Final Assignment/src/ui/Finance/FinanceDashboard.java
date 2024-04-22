@@ -4,21 +4,58 @@
  */
 package ui.Finance;
 
+import java.awt.BorderLayout;
 import javax.swing.JSplitPane;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
  * @author sahithi
  */
 public class FinanceDashboard extends javax.swing.JPanel {
-    JSplitPane jSplitPane;
+    
+     private ChartPanel chartPanel;
+    private DefaultCategoryDataset dataset;
+    private JFreeChart chart;
+    private CategoryPlot categoryPlot;
+
     /**
      * Creates new form FinanceDashboard
      */
-    public FinanceDashboard(JSplitPane jSplitPane) {
-        
-        this.jSplitPane = jSplitPane;
+    public FinanceDashboard() {
+
         initComponents();
+        showBarChart();
+
+    }
+    
+    public void showBarChart(){
+        dataset = new DefaultCategoryDataset();
+        dataset.addValue(1000, "A", "2000");
+        dataset.addValue(1100, "A", "2003");
+        dataset.addValue(900, "A", "2005");
+        
+        dataset.addValue(1100, "B", "2000");
+        dataset.addValue(1000, "B", "2003");
+        dataset.addValue(800, "B", "2005");
+        
+        dataset.addValue(900, "C", "2000");
+        dataset.addValue(1100, "C", "2003");
+        dataset.addValue(1200, "C", "2005");
+        
+        chart = ChartFactory.createBarChart("Testing chart", "X Axis", "Y Axis", dataset, PlotOrientation.VERTICAL, true, true, false);
+        
+        categoryPlot = chart.getCategoryPlot();
+        
+        chartPanel = new ChartPanel(chart);
+        barChartPanel.removeAll();
+        barChartPanel.add(chartPanel, BorderLayout.CENTER);
+        barChartPanel.validate();
     }
 
     /**
@@ -34,6 +71,7 @@ public class FinanceDashboard extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        barChartPanel = new javax.swing.JPanel();
 
         jLabel1.setFont(new java.awt.Font("Telugu MN", 1, 36)); // NOI18N
         jLabel1.setText("Finance ");
@@ -43,6 +81,19 @@ public class FinanceDashboard extends javax.swing.JPanel {
         jButton2.setText("Purchase Request");
 
         jButton3.setText("Value of Score");
+
+        barChartPanel.setBackground(new java.awt.Color(255, 102, 102));
+
+        javax.swing.GroupLayout barChartPanelLayout = new javax.swing.GroupLayout(barChartPanel);
+        barChartPanel.setLayout(barChartPanelLayout);
+        barChartPanelLayout.setHorizontalGroup(
+            barChartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 187, Short.MAX_VALUE)
+        );
+        barChartPanelLayout.setVerticalGroup(
+            barChartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 173, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -61,6 +112,10 @@ public class FinanceDashboard extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jButton3)
                         .addGap(93, 93, 93))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(barChartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,12 +127,15 @@ public class FinanceDashboard extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addContainerGap(480, Short.MAX_VALUE))
+                .addGap(93, 93, 93)
+                .addComponent(barChartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(214, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel barChartPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
