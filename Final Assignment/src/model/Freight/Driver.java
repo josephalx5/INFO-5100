@@ -59,6 +59,7 @@ public class Driver extends Person {
     }
 
     public void addPreviousRoute(Order order) {
+        order.setOrderStatus(OrderStatus.DELIVERED);
         previousRoutes.add(order);
     }
 
@@ -76,5 +77,10 @@ public class Driver extends Person {
 
     public boolean isDriverAvailable() {
         return isDriverAvailable;
+    }
+    public void markOrderAsDelivered() {
+        this.currentOrder.setOrderStatus(OrderStatus.DELIVERED);
+        this.addPreviousRoute(this.currentOrder);
+        this.currentOrder = null;
     }
 }

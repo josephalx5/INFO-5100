@@ -16,6 +16,7 @@ public class Order {
         this.deliveryDate = deliveryDate;
         this.orderAmount = orderAmount;
         this.route = route;
+        this.orderStatus = OrderStatus.PLACED;
         this.orderCapacity = orderCapacity;
     }
 
@@ -78,5 +79,6 @@ public class Order {
     public void setTruck(Truck truck) {
         this.truck = truck;
         this.truck.setCurrentOrder(this);
+        this.orderStatus = OrderStatus.SHIPPED;
     }
 }

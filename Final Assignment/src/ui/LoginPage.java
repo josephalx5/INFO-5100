@@ -9,6 +9,7 @@ import javax.swing.JSplitPane;
 import model.Configuration;
 import model.Role.Person;
 import model.Role.RoleManager;
+import ui.FreightCompany.DriverPanel;
 import ui.ShellEnergy.EnergyAdmin;
 
 /**
@@ -160,7 +161,12 @@ public class LoginPage extends javax.swing.JPanel {
             Person p = Configuration.getPersonDirectory().getPerson(jUserName.getText());
             System.out.println(p.getRole());
             if(p.getRole().equals(RoleManager.DRIVER)){
-                // TODO: Add code to open DriverJFrame
+               Configuration.getShippingNetwork().getDrivers().stream().filter(d -> d.getDriverName().equals(p.getUsername())).forEach(d -> {
+                   System.out.println("Driver found");
+                   DriverPanel djp = new DriverPanel(jsp, d);
+                   jsp.setRightComponent(djp);
+               });
+
             } else if(p.getRole().equals(RoleManager.BUSINESS_OPS_MANAGER)){
                 EnergyAdmin ea = new EnergyAdmin(jsp);
                 jsp.setRightComponent(ea);

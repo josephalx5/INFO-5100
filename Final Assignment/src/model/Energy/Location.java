@@ -54,4 +54,9 @@ public class Location {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
+    @Override
+    public String toString() {
+        return addressLine1 + ", "+ city + ", " + state ;
+    }
 }
