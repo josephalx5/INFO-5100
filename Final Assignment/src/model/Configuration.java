@@ -91,7 +91,7 @@ public class Configuration {
     private static void initFuelingNetwork() {
         ArrayList<String> foodOptions = new ArrayList<>(Arrays.asList("Dunkin Donuts", "Subway", "Starbucks"));
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station1",
                         true,
                         foodOptions,
                         true,
@@ -101,7 +101,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station2",
                         true,
                         foodOptions,
                         true,
@@ -111,7 +111,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station3",
                         true,
                         foodOptions,
                         true,
@@ -121,7 +121,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station4",
                         true,
                         foodOptions,
                         true,
@@ -131,7 +131,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station5",
                         true,
                         foodOptions,
                         true,
@@ -141,7 +141,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station6",
                         true,
                         foodOptions,
                         true,
@@ -151,7 +151,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station7",
                         true,
                         foodOptions,
                         true,
@@ -161,7 +161,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station8",
                         true,
                         foodOptions,
                         true,
@@ -171,7 +171,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station9",
                         true,
                         foodOptions,
                         true,
@@ -181,7 +181,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station10",
                         true,
                         foodOptions,
                         true,
@@ -191,7 +191,7 @@ public class Configuration {
                 )
         );
         refuelingNetwork.addRefuelingStations(new RefuelingStation(
-                        "Shell Station",
+                        "Shell Station11",
                         true,
                         foodOptions,
                         true,

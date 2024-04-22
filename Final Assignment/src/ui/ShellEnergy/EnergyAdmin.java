@@ -5,11 +5,14 @@
 package ui.ShellEnergy;
 
 import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.JSplitPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
+import ui.LoginPage;
 
 /**
  *
@@ -25,10 +28,12 @@ public class EnergyAdmin extends javax.swing.JPanel {
     private JFreeChart pieChart;
     private PiePlot piePlot;
     private ChartPanel chartPanel;
+    private JSplitPane jsp;
     
-    public EnergyAdmin() {
+    public EnergyAdmin(JSplitPane jsp) {
         initComponents();
         showPieChart();
+        this.jsp = jsp;
     }
     
     public void showPieChart() {
@@ -234,11 +239,16 @@ public class EnergyAdmin extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-//        EnergyManageFuelStations energy = new EnergyManageFuelStations()
+        EnergyManageFuelStations energy = new EnergyManageFuelStations(jsp);
+        jsp.setRightComponent(energy);
     }//GEN-LAST:event_LoginActionPerformed
 
     private void Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login1ActionPerformed
         // TODO add your handling code here:
+        LoginPage lp = new LoginPage(jsp);
+        jsp.setRightComponent(lp);
+        
+//        jsp.setRightComponent();
     }//GEN-LAST:event_Login1ActionPerformed
 
 

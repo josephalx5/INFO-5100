@@ -4,21 +4,32 @@
  */
 package ui.ShellEnergy;
 
+import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
+import model.Configuration;
+import model.Energy.Location;
+import model.Energy.RefuelingStation;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author sahithi
  */
 public class EnergyManageFuelStations extends javax.swing.JPanel {
-    
+
     /**
      * Creates new form EnergyManageFuelStations
      */
-    public EnergyManageFuelStations() {
-        
-        
+    private JSplitPane jsp;
+    int index =0 ;
+
+    public EnergyManageFuelStations(JSplitPane jsp) {
+
+        this.jsp = jsp;
         initComponents();
+        populate();
+        hideComponents();
     }
 
     /**
@@ -34,8 +45,25 @@ public class EnergyManageFuelStations extends javax.swing.JPanel {
         Login2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        Login3 = new javax.swing.JButton();
-        Login4 = new javax.swing.JButton();
+        save = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
+        foodOptions2 = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        state = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        zip = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        a1Field = new javax.swing.JTextField();
+        ev = new javax.swing.JCheckBox();
+        a2Field = new javax.swing.JTextField();
+        restroom = new javax.swing.JCheckBox();
+        city = new javax.swing.JTextField();
+        carwash = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        View = new javax.swing.JButton();
 
         Login1.setText("Back");
         Login1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,17 +83,65 @@ public class EnergyManageFuelStations extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        Login3.setText("Save");
-        Login3.addActionListener(new java.awt.event.ActionListener() {
+        save.setText("Save");
+        save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Login3ActionPerformed(evt);
+                saveActionPerformed(evt);
             }
         });
 
-        Login4.setText("Edit");
-        Login4.addActionListener(new java.awt.event.ActionListener() {
+        edit.setText("Edit");
+        edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Login4ActionPerformed(evt);
+                editActionPerformed(evt);
+            }
+        });
+
+        foodOptions2.setText("Food Options");
+        foodOptions2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foodOptions2ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Address Line 1");
+
+        jLabel4.setText("Address Line 2");
+
+        jLabel5.setText("City");
+
+        jLabel6.setText("State");
+
+        nameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Zip");
+
+        ev.setText("EV Charging");
+        ev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                evActionPerformed(evt);
+            }
+        });
+
+        restroom.setText("Restrooms");
+        restroom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restroomActionPerformed(evt);
+            }
+        });
+
+        carwash.setText("Car Wash");
+
+        jLabel1.setText("Name");
+
+        View.setText("View");
+        View.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewActionPerformed(evt);
             }
         });
 
@@ -80,17 +156,44 @@ public class EnergyManageFuelStations extends javax.swing.JPanel {
                 .addComponent(Login2)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jLabel3)
-                .addGap(47, 47, 47)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(226, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Login3)
-                    .addComponent(Login4))
-                .addGap(38, 38, 38))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel3)
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nameField)
+                    .addComponent(a1Field)
+                    .addComponent(zip, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(foodOptions2)
+                    .addComponent(carwash)
+                    .addComponent(ev)
+                    .addComponent(restroom)
+                    .addComponent(state)
+                    .addComponent(city)
+                    .addComponent(a2Field)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(save)
+                            .addComponent(edit))
+                        .addGap(38, 38, 38))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(View)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,38 +205,217 @@ public class EnergyManageFuelStations extends javax.swing.JPanel {
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(View))
                 .addGap(32, 32, 32)
-                .addComponent(Login4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edit)
+                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addComponent(Login3)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(save)
+                    .addComponent(a1Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(a2Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(state, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(zip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(ev)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(restroom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(carwash)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(foodOptions2)
+                .addGap(138, 138, 138))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void Login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login1ActionPerformed
         // TODO add your handling code here:
+        EnergyAdmin ea = new EnergyAdmin(jsp);
+        jsp.setRightComponent(ea);
     }//GEN-LAST:event_Login1ActionPerformed
 
     private void Login2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login2ActionPerformed
         // TODO add your handling code here:
+        CreateNewEnergyStation ces = new CreateNewEnergyStation(jsp);
+        jsp.setRightComponent(ces);
     }//GEN-LAST:event_Login2ActionPerformed
 
-    private void Login3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login3ActionPerformed
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Login3ActionPerformed
+        enableEdit(false);
+        populate();
+        JOptionPane.showMessageDialog(this, "Fuel Station Updated");
+        RefuelingStation rs = Configuration.getRefuelingNetwork().getRefuelingStations().get(index);
+        rs.setName(nameField.getText());
+        rs.setRestroomAvailable(restroom.isSelected());
+        rs.setEvChargingAvailable(ev.isSelected());
+        rs.setCarWashAvailable(carwash.isSelected());
+        if(foodOptions2.isSelected()){
+            ArrayList<String> foodOptions = new ArrayList<String>();
+            foodOptions.add("Snacks");
+            rs.setFoodOptions(foodOptions);
+        } else{
+            rs.setFoodOptions(new ArrayList<>());
+        }
+        Location location = new Location(a1Field.getText(), a2Field.getText(), city.getText(), state.getText(), zip.getText());
+        rs.setLocation(location);
+    }//GEN-LAST:event_saveActionPerformed
 
-    private void Login4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login4ActionPerformed
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Login4ActionPerformed
+        enableEdit(true);
+        
+    }//GEN-LAST:event_editActionPerformed
 
+    private void foodOptions2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodOptions2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_foodOptions2ActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
+
+    private void restroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restroomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_restroomActionPerformed
+
+    private void evActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_evActionPerformed
+
+    private void ViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewActionPerformed
+        // TODO add your handling code here:
+        if (jComboBox1.getSelectedIndex() <= 0) {
+            JOptionPane.showMessageDialog(this, "Please select a station to view.");
+        } else {
+            System.out.println("Selected an Option: " + jComboBox1.getSelectedIndex());
+            index = jComboBox1.getSelectedIndex()-1;
+            RefuelingStation rs = Configuration.getRefuelingNetwork().getRefuelingStations().get(jComboBox1.getSelectedIndex()-1);
+            populate(rs);
+        }
+    }//GEN-LAST:event_ViewActionPerformed
+
+    private void populate(RefuelingStation rs) {
+        System.out.println("Populating");
+        showComponents();
+        nameField.setText(rs.getName());
+        a1Field.setText(rs.getLocation().getAddressLine1());
+        a2Field.setText(rs.getLocation().getAddressLine2());
+        city.setText(rs.getLocation().getCity());
+        state.setText(rs.getLocation().getState());
+        zip.setText(rs.getLocation().getZipCode());
+        ev.setSelected(rs.isEvChargingAvailable());
+        carwash.setSelected(rs.isCarWashAvailable());
+        restroom.setSelected(rs.isRestroomAvailable());
+        foodOptions2.setSelected(rs.getFoodOptions().size()!=0);
+        
+    }
+
+    private void populate() {
+        jComboBox1.removeAllItems();
+        jComboBox1.addItem("Select");
+        for (RefuelingStation rs : Configuration.getRefuelingNetwork().getRefuelingStations()) {
+            jComboBox1.addItem(rs.getLocation().getCity());
+        }
+        enableEdit(false);
+    }
+        private void hideComponents(){
+        nameField.hide();
+         jLabel1.hide();
+         jLabel2.hide();
+            jLabel4.hide();
+            jLabel5.hide();
+            jLabel6.hide();
+            jLabel7.hide();
+            a1Field.hide();
+            a2Field.hide();
+            carwash.hide();
+            city.hide();
+            state.hide();
+            zip.hide();
+            ev.hide();
+            restroom.hide();
+            carwash.hide();
+            foodOptions2.hide();
+            edit.hide();
+            save.hide();
+    }
+    private void showComponents(){
+        nameField.show();
+         jLabel1.show();
+         jLabel2.show();
+            jLabel4.show();
+            jLabel5.show();
+            jLabel6.show();
+            jLabel7.show();
+            a1Field.show();
+            a2Field.show();
+            carwash.show();
+            city.show();
+            zip.show();
+            ev.show();
+            state.show();
+            restroom.show();
+            carwash.show();
+            foodOptions2.show();
+            edit.show();
+            save.show();
+
+    }
+    private void enableEdit(boolean value){
+        nameField.setEditable(value);
+        a1Field.setEditable(value);
+        a2Field.setEditable(value);
+        city.setEditable(value);
+        state.setEditable(value);
+        zip.setEditable(value);
+        ev.setEnabled(value);
+        carwash.setEnabled(value);
+        restroom.setEnabled(value);
+        foodOptions2.setEnabled(value);
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Login1;
     private javax.swing.JButton Login2;
-    private javax.swing.JButton Login3;
-    private javax.swing.JButton Login4;
+    private javax.swing.JButton View;
+    private javax.swing.JTextField a1Field;
+    private javax.swing.JTextField a2Field;
+    private javax.swing.JCheckBox carwash;
+    private javax.swing.JTextField city;
+    private javax.swing.JButton edit;
+    private javax.swing.JCheckBox ev;
+    private javax.swing.JCheckBox foodOptions2;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JCheckBox restroom;
+    private javax.swing.JButton save;
+    private javax.swing.JTextField state;
+    private javax.swing.JTextField zip;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,12 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import model.Configuration;
+import model.Role.Person;
+import model.Role.RoleManager;
+import ui.ShellEnergy.EnergyAdmin;
+
 
 //import org.knowm.xchart.XYChart;
 //import org.knowm.xchart.XYChartBuilder;
@@ -22,6 +28,7 @@ public class MainJFrame extends javax.swing.JFrame {
      */
     public MainJFrame() {
         initComponents();
+        Configuration.getPersonDirectory();
     }
     
     
@@ -49,6 +56,7 @@ public class MainJFrame extends javax.swing.JFrame {
         showPass = new javax.swing.JCheckBox();
         jPassword = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
+        Login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 102));
@@ -117,14 +125,13 @@ public class MainJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel2))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(266, 266, 266)
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(245, 245, 245)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(3, 3, 3)))
+                                        .addGap(266, 266, 266)
+                                        .addComponent(jLabel5))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel4)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jUserName)
                                     .addComponent(showPass)
@@ -166,15 +173,32 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(224, 149, 166));
 
+        Login.setText("jButton2");
+        Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 900, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Login)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Login)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jSplitPane1.setLeftComponent(jPanel3);
@@ -196,6 +220,29 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(jPassword.getText().isBlank() || jUserName.getText().isBlank()){
+            JOptionPane.showMessageDialog(this, "Please fill all fields");
+        } else {
+            System.out.println("All fields populated");
+            Person p = Configuration.getPersonDirectory().getPerson(jUserName.getText());
+            System.out.println(p.getRole());
+            if(p.getRole().equals(RoleManager.DRIVER)){
+                // TODO: Add code to open DriverJFrame
+            } else if(p.getRole().equals(RoleManager.BUSINESS_OPS_MANAGER)){
+//                EnergyAdmin ea = new EnergyAdmin(jSplitPane1,jPanel2);
+//                jSplitPane1.setRightComponent(ea);
+            } else if(p.getRole().equals(RoleManager.PURCHASE_MANAGER)){
+                // TODO: Add code to open PurchaseManagerJFrame
+            } else if(p.getRole().equals(RoleManager.SALES_MANAGER)){
+                // TODO: Add code to open SalesManagerJFrame
+            } else if(p.getRole().equals(RoleManager.RISK_ANALYST)){
+                // TODO: Add code to open RiskAnalystJFrame
+            } else if(p.getRole().equals(RoleManager.SERVICE_MANAGER)){
+                // TODO: Add code to open ServiceManagerJFrame
+            } else {
+
+            }
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -211,6 +258,10 @@ public class MainJFrame extends javax.swing.JFrame {
             jPassword.setEchoChar('*');
         }
     }//GEN-LAST:event_showPassActionPerformed
+
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,6 +298,7 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Login;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
