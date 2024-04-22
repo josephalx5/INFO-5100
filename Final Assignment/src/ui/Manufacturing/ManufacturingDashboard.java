@@ -41,6 +41,11 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
         jButton1.setText("Current Order");
 
         jButton2.setText("Inventory Management");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Past Orders");
 
@@ -73,6 +78,10 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
                 .addContainerGap(456, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
