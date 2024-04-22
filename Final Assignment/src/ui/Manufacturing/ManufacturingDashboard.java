@@ -11,13 +11,13 @@ import javax.swing.JSplitPane;
  * @author sahithi
  */
 public class ManufacturingDashboard extends javax.swing.JPanel {
-    JSplitPane jSplitPane;
+    
     /**
      * Creates new form ManufacturingDashboard
      */
-    public ManufacturingDashboard(JSplitPane jSplitPane) {
+    public ManufacturingDashboard() {
         
-        this.jSplitPane = jSplitPane;
+        
         initComponents();
     }
 

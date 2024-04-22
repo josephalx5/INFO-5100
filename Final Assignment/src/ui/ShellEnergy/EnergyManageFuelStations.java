@@ -11,13 +11,13 @@ import javax.swing.JSplitPane;
  * @author sahithi
  */
 public class EnergyManageFuelStations extends javax.swing.JPanel {
-    JSplitPane jSplitPane;
+    
     /**
      * Creates new form EnergyManageFuelStations
      */
-    public EnergyManageFuelStations(JSplitPane jSplitPane) {
+    public EnergyManageFuelStations() {
         
-        this.jSplitPane = jSplitPane;
+        
         initComponents();
     }
 

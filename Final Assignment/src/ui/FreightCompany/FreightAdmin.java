@@ -12,13 +12,13 @@ import javax.swing.JSplitPane;
  * @author sahithi
  */
 public class FreightAdmin extends javax.swing.JPanel {
-JSplitPane jSplitPane;
+
     /**
      * Creates new form FreightAdmin
      */
-    public FreightAdmin(JSplitPane jSplitPane) {
+    public FreightAdmin() {
         
-        this.jSplitPane = jSplitPane;
+        
         initComponents();
     }
 
@@ -94,17 +94,11 @@ JSplitPane jSplitPane;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         FreightManageOrders orders = new FreightManageOrders(jSplitPane);
-        jSplitPane.add("FreightManageOrders", orders);
-        CardLayout layout = (CardLayout) orders.getLayout();
-        layout.next(orders);
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-            FreightManageFleet fleet = new FreightManageFleet(jSplitPane);
-            jSplitPane.add("EnergyAdmin", fleet);
-            CardLayout layout = (CardLayout) fleet.getLayout();
-            layout.next(fleet);
+            
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
