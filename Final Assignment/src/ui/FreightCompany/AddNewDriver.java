@@ -86,7 +86,7 @@ public class AddNewDriver extends javax.swing.JPanel {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jTextField1)
                                         .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)))))
-                        .addGap(0, 196, Short.MAX_VALUE)))
+                        .addGap(0, 507, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -106,7 +106,7 @@ public class AddNewDriver extends javax.swing.JPanel {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jButton2)
-                .addContainerGap(377, Short.MAX_VALUE))
+                .addContainerGap(428, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

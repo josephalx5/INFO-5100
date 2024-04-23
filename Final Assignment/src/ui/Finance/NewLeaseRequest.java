@@ -159,7 +159,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
                                 .addGroup(layout.createSequentialGroup()
                                     .addContainerGap()
                                     .addComponent(jButton2))))
-                        .addGap(0, 76, Short.MAX_VALUE))
+                        .addGap(0, 226, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -214,7 +214,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(updateButton)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

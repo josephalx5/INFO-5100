@@ -55,7 +55,7 @@ public class ViewReports extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(398, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50))
         );
@@ -66,7 +66,7 @@ public class ViewReports extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(395, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -123,7 +123,7 @@ public class InsuranceAdmin extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 71, Short.MAX_VALUE)
+                        .addGap(0, 371, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -168,7 +168,7 @@ public class InsuranceAdmin extends javax.swing.JPanel {
                     .addComponent(QuoteLabel))
                 .addGap(27, 27, 27)
                 .addComponent(updateInsurance)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

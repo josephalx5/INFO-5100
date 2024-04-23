@@ -158,7 +158,7 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
                             .addGap(18, 18, 18)
                             .addComponent(jButton5))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,7 +167,7 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(btnBack))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,7 +184,7 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {
-        //GEN-FIRST:event_btnBackActionPerformed
+//GEN-FIRST:event_btnBackActionPerformed
         jsp.setRightComponent(new LoginPage(jsp));
     }//GEN-LAST:event_btnBackActionPerformed
 

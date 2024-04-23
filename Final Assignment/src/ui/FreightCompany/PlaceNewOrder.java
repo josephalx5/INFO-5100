@@ -123,7 +123,7 @@ public class PlaceNewOrder extends javax.swing.JPanel {
                                             .addComponent(jButton3)
                                             .addComponent(Duration, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(Capacity, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(0, 146, Short.MAX_VALUE)))
+                        .addGap(0, 454, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -159,7 +159,7 @@ public class PlaceNewOrder extends javax.swing.JPanel {
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(269, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

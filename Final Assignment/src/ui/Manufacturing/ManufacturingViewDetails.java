@@ -95,7 +95,7 @@ public class ManufacturingViewDetails extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnBack1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
                 .addComponent(lblTitle)
                 .addGap(215, 215, 215))
             .addGroup(layout.createSequentialGroup()
@@ -118,7 +118,7 @@ public class ManufacturingViewDetails extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(191, Short.MAX_VALUE)))
+                    .addContainerGap(491, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +135,7 @@ public class ManufacturingViewDetails extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblProductPrice)
                     .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(355, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(211, 211, 211)
@@ -146,7 +146,7 @@ public class ManufacturingViewDetails extends javax.swing.JPanel {
                     .addComponent(btnUpdate)
                     .addGap(18, 18, 18)
                     .addComponent(btnSave)
-                    .addContainerGap(208, Short.MAX_VALUE)))
+                    .addContainerGap(259, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 

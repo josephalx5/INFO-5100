@@ -92,7 +92,7 @@ public class TrucksNeedingService extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1)))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +103,7 @@ public class TrucksNeedingService extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
