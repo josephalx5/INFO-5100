@@ -24,7 +24,7 @@ public class TruckOrder {
     }
 
     public double getValueOfVehicle() {
-        return valueOfVehicle;       
+        return valueOfVehicle;
     }
 
     public void setValueOfVehicle(double valueOfVehicle) {

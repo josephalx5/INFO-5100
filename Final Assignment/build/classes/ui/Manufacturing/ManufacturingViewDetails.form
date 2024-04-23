@@ -25,7 +25,15 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
-              <Component id="lblProductPrice" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="txtId" min="-2" pref="159" max="-2" attributes="0"/>
+                  <Component id="txtValue" min="-2" pref="159" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="lblProductPrice" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="txtModel" min="-2" pref="159" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -39,11 +47,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnSave" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
                       <Component id="btnUpdate" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
-                      <Component id="txtName" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
-                      <Component id="txtId" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
-                      <Component id="txtPrice" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="155" max="32767" attributes="0"/>
+                  <EmptySpace pref="191" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -56,28 +61,24 @@
                   <Component id="lblTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBack1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
-              <Component id="lblProductPrice" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="305" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
+              <Component id="txtId" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="txtValue" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblProductPrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtModel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="302" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtName" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                          <Component id="lblProductName" min="-2" pref="18" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblProductId" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="txtPrice" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                  <Component id="lblProductName" min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Component id="lblProductId" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                   <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnSave" min="-2" max="-2" attributes="0"/>
@@ -96,7 +97,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtId">
+    <Component class="javax.swing.JTextField" name="txtValue">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
@@ -120,7 +121,7 @@
         <Property name="text" type="java.lang.String" value="Sales ID:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtName">
+    <Component class="javax.swing.JTextField" name="txtId">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
@@ -130,7 +131,7 @@
         <Property name="text" type="java.lang.String" value="Model:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPrice">
+    <Component class="javax.swing.JTextField" name="txtModel">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
@@ -147,6 +148,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;&lt; Back"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBack1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

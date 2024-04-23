@@ -4,7 +4,12 @@
  */
 package ui.Manufacturing;
 
-import javax.swing.JSplitPane;
+import model.Configuration;
+import model.Ford.Sales.TruckOrder;
+import ui.LoginPage;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,10 +20,31 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
     /**
      * Creates new form ManufacturingDashboard
      */
-    public ManufacturingDashboard() {
-        
-        
+    private JSplitPane jsp;
+    public ManufacturingDashboard(JSplitPane jsp) {
         initComponents();
+        this.jsp = jsp;
+        populate();
+    }
+    private void populate(){
+        DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+        dtm.setRowCount(0);
+        for(TruckOrder order : Configuration.getManufacturer().getSales().getCurrentOrders()){
+            Object[] row = new Object[3];
+            row[0] = order.getSalesId();
+            row[1] = order.getValueOfVehicle();
+            row[2] = order.getModel();
+            dtm.addRow(row);
+        }
+        DefaultTableModel dtm1 = (DefaultTableModel) jTable2.getModel();
+        dtm1.setRowCount(0);
+        for(TruckOrder order : Configuration.getManufacturer().getSales().getPastOrders()){
+            Object[] row = new Object[3];
+            row[0] = order.getSalesId();
+            row[1] = order.getValueOfVehicle();
+            row[2] = order.getModel();
+            dtm1.addRow(row);
+        }
     }
 
     /**
@@ -38,6 +64,8 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Telugu MN", 1, 36)); // NOI18N
         jLabel1.setText("Manufacturing Dashboard");
@@ -52,25 +80,51 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
             new String [] {
                 "Sales ID", "Value Of Vehicle", "Model"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jButton4.setText("Approve");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Sales Id", "Value of Vehicle", "Model"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         jButton5.setText("View Details");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +132,12 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel2.setText("Past Orders");
+
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabel3.setText("New Order Request");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -88,6 +148,8 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
                 .addComponent(btnBack)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
                     .addComponent(jLabel1)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -105,22 +167,53 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(btnBack))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(jButton5))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-
-        
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {
+        //GEN-FIRST:event_btnBackActionPerformed
+        jsp.setRightComponent(new LoginPage(jsp));
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row");
+        } else {
+            String id = jTable1.getValueAt(selectedRow, 0).toString();
+            TruckOrder order = Configuration.getManufacturer().getSales().getCurrentOrders().stream().filter(o -> o.getSalesId().equals(id)).findFirst().get();
+            Configuration.addTruckToShippingNetwork(order);
+            Configuration.getManufacturer().getSales().addToPastOrders(id);
+            JOptionPane.showMessageDialog(this, "Order has been processed successfully");
+            populate();
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        if(selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row");
+        } else {
+            String id = jTable1.getValueAt(selectedRow, 0).toString();
+            TruckOrder order = Configuration.getManufacturer().getSales().getCurrentOrders().stream().filter(o -> o.getSalesId().equals(id)).findFirst().get();
+            jsp.setRightComponent(new ManufacturingViewDetails(jsp, order));
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -128,6 +221,8 @@ public class ManufacturingDashboard extends javax.swing.JPanel {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

@@ -240,6 +240,17 @@ public class Configuration {
     }
 
     private static void initManufacturer() {
+        TruckOrder truckOrder = new TruckOrder(100000);
+        truckOrder.setModel("Ford F-150");
+        TruckOrder truckOrder2 = new TruckOrder(100000);
+        truckOrder2.setModel("Ford F-250");
+        TruckOrder truckOrder3 = new TruckOrder(100000);
+        truckOrder3.setModel("Ford F-350");
+
+        manufacturer.getSales().addPastOrder(truckOrder);
+        manufacturer.getSales().addPastOrder(truckOrder2);
+        manufacturer.getSales().addPastOrder(truckOrder3);
+
         manufacturer.getService().addServiceRequest(
                 new ServiceRequest(2000)
         );
@@ -273,13 +284,15 @@ public class Configuration {
     }
 
     public static void addTruckToShippingNetwork(TruckOrder truckOrder) {
-        Truck truck = new Truck(7, FuelType.ELECTRIC, 70000, "Ford");
+        Truck truck = new Truck(7, FuelType.ELECTRIC, 0, "Ford");
         truck.setInsurance(initInsurancePredictor(truckOrder));
         shippingNetwork.addTruck(truck);
     }
 
     public static void addPurchaseRequestToManufacturer(Lease lease) {
-        manufacturer.getSales().addToCurrentOrders(new TruckOrder(lease.getLeaseAmount()));
+        TruckOrder truckOrder = new TruckOrder(lease.getLeaseAmount());
+        truckOrder.setModel("Ford F-150");
+        manufacturer.getSales().addToCurrentOrders(truckOrder);
     }
     public static PersonDirectory getPersonDirectory() {
         if (personDirectory == null) {

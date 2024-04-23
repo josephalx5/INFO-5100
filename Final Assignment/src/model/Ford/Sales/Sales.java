@@ -41,6 +41,9 @@ public class Sales {
             }
         }
     }
+    public void addPastOrder(TruckOrder order) {
+        pastOrders.add(order);
+    }
 
     public void addToCurrentOrders(TruckOrder order) {
         currentOrders.add(order);

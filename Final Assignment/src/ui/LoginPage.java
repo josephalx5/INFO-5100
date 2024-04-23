@@ -13,6 +13,7 @@ import ui.Finance.FinanceDashboard;
 import ui.Finance.InsuranceAdmin;
 import ui.FreightCompany.DriverPanel;
 import ui.FreightCompany.FreightManageOrders;
+import ui.Manufacturing.ManufacturingDashboard;
 import ui.ShellEnergy.EnergyAdmin;
 
 /**
@@ -176,7 +177,7 @@ public class LoginPage extends javax.swing.JPanel {
             } else if(p.getRole().equals(RoleManager.PURCHASE_MANAGER)){
                 jsp.setRightComponent(new FinanceDashboard(jsp));
             } else if(p.getRole().equals(RoleManager.SALES_MANAGER)){
-                // TODO: Add code to open SalesManagerJFrame
+                jsp.setRightComponent(new ManufacturingDashboard(jsp));
             } else if(p.getRole().equals(RoleManager.RISK_ANALYST)){
                 jsp.setRightComponent(new InsuranceAdmin(jsp));
             } else if(p.getRole().equals(RoleManager.SERVICE_MANAGER)){
