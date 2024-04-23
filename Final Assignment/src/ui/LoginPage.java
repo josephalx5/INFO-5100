@@ -9,6 +9,7 @@ import javax.swing.JSplitPane;
 import model.Configuration;
 import model.Role.Person;
 import model.Role.RoleManager;
+import ui.Finance.FinanceDashboard;
 import ui.FreightCompany.DriverPanel;
 import ui.FreightCompany.FreightManageOrders;
 import ui.ShellEnergy.EnergyAdmin;
@@ -172,7 +173,7 @@ public class LoginPage extends javax.swing.JPanel {
                 EnergyAdmin ea = new EnergyAdmin(jsp);
                 jsp.setRightComponent(ea);
             } else if(p.getRole().equals(RoleManager.PURCHASE_MANAGER)){
-                // TODO: Add code to open PurchaseManagerJFrame
+                jsp.setRightComponent(new FinanceDashboard(jsp));
             } else if(p.getRole().equals(RoleManager.SALES_MANAGER)){
                 // TODO: Add code to open SalesManagerJFrame
             } else if(p.getRole().equals(RoleManager.RISK_ANALYST)){

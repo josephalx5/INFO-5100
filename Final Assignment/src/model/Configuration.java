@@ -257,6 +257,11 @@ public class Configuration {
         purchase.addLease(new Lease(6, 30000, 0.7, shippingNetwork));
         purchase.addLease(new Lease(7, 40000, 0.6, shippingNetwork));
         purchase.addLease(new Lease(8, 50000, 0.5, shippingNetwork));
+
+        purchase.addCreditScore("FedEx", 700);
+        purchase.addCreditScore("UPS", 800);
+        purchase.addCreditScore("DHL", 900);
+        purchase.addCreditScore("USPS", 600);
     }
     public static void addLeaseRequestToBank() {
         purchase.addNewLeaseRequest(new Lease(4, 100000, 0.8, shippingNetwork));

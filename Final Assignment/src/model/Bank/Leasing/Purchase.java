@@ -53,6 +53,13 @@ public class Purchase {
         newLeaseRequests.add(lease);
     }
 
+    public void addNewLease(Lease lease) {
+        leases.add(lease);
+    }
+    public ArrayList<Lease> getNewLeaseRequests() {
+        return newLeaseRequests;
+    }
+
     public void acceptLeaseRequest(String leaseId) {
         for (Lease lease : newLeaseRequests) {
             if (lease.getLeaseId().equals(leaseId)) {
