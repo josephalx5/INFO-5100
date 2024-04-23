@@ -10,6 +10,7 @@ import model.Configuration;
 import model.Role.Person;
 import model.Role.RoleManager;
 import ui.Finance.FinanceDashboard;
+import ui.Finance.InsuranceAdmin;
 import ui.FreightCompany.DriverPanel;
 import ui.FreightCompany.FreightManageOrders;
 import ui.ShellEnergy.EnergyAdmin;
@@ -177,7 +178,7 @@ public class LoginPage extends javax.swing.JPanel {
             } else if(p.getRole().equals(RoleManager.SALES_MANAGER)){
                 // TODO: Add code to open SalesManagerJFrame
             } else if(p.getRole().equals(RoleManager.RISK_ANALYST)){
-                // TODO: Add code to open RiskAnalystJFrame
+                jsp.setRightComponent(new InsuranceAdmin(jsp));
             } else if(p.getRole().equals(RoleManager.SERVICE_MANAGER)){
                 // TODO: Add code to open ServiceManagerJFrame
             } else if(p.getRole().equals(RoleManager.FLEET_MANAGER)){

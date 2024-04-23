@@ -4,7 +4,7 @@ public class Insurance {
     private final String insuranceId;
     private final int valueOfVehicle;
     private final int averageDriverScore;
-    private final int insuranceQuote;
+    private int insuranceQuote;
 
 
     public Insurance(int valueOfVehicle, int averageDriverScore, int insuranceQuote) {
@@ -28,5 +28,9 @@ public class Insurance {
 
     public int getInsuranceQuote() {
         return insuranceQuote;
+    }
+
+    public void setInsuranceQuote(int insuranceQuote) {
+        this.insuranceQuote = insuranceQuote;
     }
 }

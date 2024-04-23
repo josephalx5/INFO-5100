@@ -211,6 +211,7 @@ public class Configuration {
         shippingNetwork.addTruck(new Truck(7, FuelType.GASOLINE, 50000, "Ford"));
         shippingNetwork.addTruck(new Truck(7, FuelType.ELECTRIC, 60000, "Ford"));
 
+
         // Adding orders to the shipping network
         shippingNetwork.addOrder(new Order("09/04/2024", "10/04/2024", 10000,
                 new Route("Boston", "New York", 310, 10)
@@ -232,6 +233,10 @@ public class Configuration {
         shippingNetwork.addDriver(new Driver("Jeremy Clarkson", 10));
         shippingNetwork.addDriver(new Driver("James May", 8));
         shippingNetwork.addDriver(new Driver("Richard Hammond", 9));
+
+        for(Truck truck: shippingNetwork.getTrucks()) {
+            truck.setInsurance(initInsurancePredictor(new TruckOrder(100000)));
+        }
     }
 
     private static void initManufacturer() {

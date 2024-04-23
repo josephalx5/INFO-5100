@@ -29,6 +29,7 @@ public class CurrentLeases extends javax.swing.JPanel {
 
     private void populateTable() {
         id.setEnabled(false);
+        update.setEnabled(false);
         leaseTerm.setEnabled(false);
         intrestRate.setEnabled(false);
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
@@ -200,6 +201,7 @@ public class CurrentLeases extends javax.swing.JPanel {
             intrestRate.setText(String.valueOf(lease.getInterestRate()));
             leaseTerm.setEnabled(true);
             intrestRate.setEnabled(true);
+            update.setEnabled(true);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

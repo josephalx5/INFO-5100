@@ -30,6 +30,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
         jTextField2.setEnabled(false);
         jTextField3.setEnabled(false);
         jTextField4.setEnabled(false);
+        updateButton.setEnabled(false);
 
         jTextField1.setText("");
         jTextField2.setText("");
@@ -72,7 +73,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -120,14 +121,6 @@ public class NewLeaseRequest extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField3");
-
         jLabel2.setText("Id:");
 
         jLabel3.setText("Lease Term:");
@@ -136,10 +129,10 @@ public class NewLeaseRequest extends javax.swing.JPanel {
 
         jLabel5.setText("Intrest Rate:");
 
-        jButton4.setText("Update");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        updateButton.setText("Update");
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                updateButtonActionPerformed(evt);
             }
         });
 
@@ -181,7 +174,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
                                 .addComponent(jLabel5)
                                 .addGap(14, 14, 14)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
+                            .addComponent(updateButton)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                                 .addComponent(jTextField2)
@@ -220,7 +213,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
+                .addComponent(updateButton)
                 .addContainerGap(10, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -243,7 +236,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
         jsp.setRightComponent(new FinanceDashboard(jsp));
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
         if(jTextField1.getText().isEmpty() || jTextField2.getText().isEmpty() || jTextField3.getText().isEmpty() || jTextField4.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
@@ -254,9 +247,10 @@ public class NewLeaseRequest extends javax.swing.JPanel {
             lease.setLeaseAmount(Double.parseDouble(jTextField3.getText()));
             lease.setInterestRate(Double.parseDouble(jTextField4.getText()));
             populateTable();
+            updateButton.setEnabled(false);
             JOptionPane.showMessageDialog(this, "Lease Updated", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -274,6 +268,7 @@ public class NewLeaseRequest extends javax.swing.JPanel {
             jTextField2.setEnabled(true);
             jTextField3.setEnabled(true);
             jTextField4.setEnabled(true);
+            updateButton.setEnabled(true);
 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -283,7 +278,6 @@ public class NewLeaseRequest extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -295,5 +289,6 @@ public class NewLeaseRequest extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }
