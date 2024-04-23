@@ -10,6 +10,7 @@ import model.Configuration;
 import model.Role.Person;
 import model.Role.RoleManager;
 import ui.FreightCompany.DriverPanel;
+import ui.FreightCompany.FreightManageOrders;
 import ui.ShellEnergy.EnergyAdmin;
 
 /**
@@ -178,8 +179,11 @@ public class LoginPage extends javax.swing.JPanel {
                 // TODO: Add code to open RiskAnalystJFrame
             } else if(p.getRole().equals(RoleManager.SERVICE_MANAGER)){
                 // TODO: Add code to open ServiceManagerJFrame
-            } else {
-
+            } else if(p.getRole().equals(RoleManager.FLEET_MANAGER)){
+                FreightManageOrders fmo = new FreightManageOrders(jsp);
+                jsp.setRightComponent(fmo);
+            }else {
+                // TODO: No role found
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

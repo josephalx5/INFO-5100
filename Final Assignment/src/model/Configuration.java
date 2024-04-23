@@ -259,7 +259,7 @@ public class Configuration {
         purchase.addLease(new Lease(8, 50000, 0.5, shippingNetwork));
     }
     public static void addLeaseRequestToBank() {
-        purchase.addNewLeaseRequest(new Lease(4, 10000, 0.8, shippingNetwork));
+        purchase.addNewLeaseRequest(new Lease(4, 100000, 0.8, shippingNetwork));
     }
 
     public static void addTruckToShippingNetwork(TruckOrder truckOrder) {
