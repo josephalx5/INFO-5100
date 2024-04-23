@@ -14,6 +14,7 @@ import ui.Finance.InsuranceAdmin;
 import ui.FreightCompany.DriverPanel;
 import ui.FreightCompany.FreightManageOrders;
 import ui.Manufacturing.ManufacturingDashboard;
+import ui.Service.ServiceDashboard;
 import ui.ShellEnergy.EnergyAdmin;
 
 /**
@@ -163,7 +164,10 @@ public class LoginPage extends javax.swing.JPanel {
         } else {
             System.out.println("All fields populated");
             Person p = Configuration.getPersonDirectory().getPerson(jUserName.getText());
-            System.out.println(p.getRole());
+            if(p == null){
+                JOptionPane.showMessageDialog(this, "User not found", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             if(p.getRole().equals(RoleManager.DRIVER)){
                Configuration.getShippingNetwork().getDrivers().stream().filter(d -> d.getDriverName().equals(p.getUsername())).forEach(d -> {
                    System.out.println("Driver found");
@@ -181,7 +185,7 @@ public class LoginPage extends javax.swing.JPanel {
             } else if(p.getRole().equals(RoleManager.RISK_ANALYST)){
                 jsp.setRightComponent(new InsuranceAdmin(jsp));
             } else if(p.getRole().equals(RoleManager.SERVICE_MANAGER)){
-                // TODO: Add code to open ServiceManagerJFrame
+                jsp.setRightComponent(new ServiceDashboard(jsp));
             } else if(p.getRole().equals(RoleManager.FLEET_MANAGER)){
                 FreightManageOrders fmo = new FreightManageOrders(jsp);
                 jsp.setRightComponent(fmo);
